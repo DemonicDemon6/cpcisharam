@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+}
+
+:root
+{
+    --bg: #000200;
+}
+
+/* Scroll */
+
+::-webkit-scrollbar
+{
+    width: 0;
+}
+
+#scrollPath
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    width: 10px;
+    height: 100%;
+    background: rgba(255,255,255,0.05);
+}
+
+#progressbar 
+{
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    width: 10px;
+    background: linear-gradient(to top,#008aff,#00ffe7);
+    animation: scrollAnimate 5s linear infinite;
+}
+
+@keyframes scrollAnimate 
+{
+    0%,100%
+    {
+        filter: hue-rotate(0deg);
+    }
+    50%
+    {
+        filter: hue-rotate(360deg);
+    }
+}
+
+#progressbar::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(10px);
+}   
+
+#progressbar::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(30px);
+}   
+
+/* Stars */
+
+.title
+{
+    position: absolute;
+    top:  125px;
+    z-index: 1;
+    font-size: 3em;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+}
+
+.star-section
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.star-section .star
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    animation: animate 8s ease-in-out infinite,
+               backgroundmove 16s linear infinite;
+}
+
+.star-section .star.star1
+{
+    animation-delay: 0s;
+    background: url(img/star1.png);
+}
+
+.star-section .star.star2
+{
+    animation-delay: -1s;
+    background: url(img/star2.png);
+}
+
+.star-section .star.star3
+{
+    animation-delay: -2s;
+    background: url(img/star3.png);
+}
+
+.star-section .star.star4
+{
+    animation-delay: -3;
+    background: url(img/star4.png);
+}
+
+.star-section .star.star5
+{
+    animation-delay: -4s;
+    background: url(img/star5.png);
+}
+
+.star-section .star.star6
+{
+    animation-delay: -5s;
+    background: url(img/star6.png);
+}
+
+.star-section .star.star7
+{
+    animation-delay: -6s;
+    background: url(img/star7.png);
+}
+
+.star-section .star.star8
+{
+    animation-delay: -7s;
+    background: url(img/star8.png);
+}
+
+@keyframes animate
+{
+    0%,20%,40%,60%,80%,100%
+    {
+        opacity: 0;
+    }
+
+    10%,30%,50%,70%,90%
+    {
+        opacity: 1;
+    }
+}
+
+@keyframes backgroundmove
+{
+    0%
+    {
+        transform: scale(1)
+    }
+    100%
+    {
+        transform: scale(2)
+    }
+}
+
+/* Banner */
+
+.banner-section
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(img/best_of_cpc.jpg);
+    filter: saturate(90%);
+    background-attachment: fixed;
+    z-index: 2;
+    overflow: hidden;
+    clip-path: circle(0px at center);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.neon
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    margin: 0;
+    padding: 0 20px;
+    font-size: 6em;
+    color: #fff;
+    text-shadow: 0 0 20px #821CE1; /* #ff005b */
+    background: transparent;
+    filter: saturate(110%);
+}
+
+.neon::after
+{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    color: #821CE1;
+    z-index: -1;
+    filter: blur(15px);
+}
+
+.neon::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fe3a80;
+    background: transparent;
+    z-index: -2;
+    opacity: .5;
+    filter: blur(40x);
+}
+@keyframes cpc_text
+{
+    0%
+    {
+        background-position: 0% 100%;
+    }
+    50%
+    {
+        background-position: 100% 0%;
+    }
+    100%
+    {
+        background-position: 0% 100%;
+    }
+}
+
+/* Text */
+
+.container
+{
+    position: relative;
+    margin-top: 50vh;
+    background: var(--bg);
+    padding: 25px;
+    z-index: 3;
+}
+
+.explore-body
+{
+  /* Background Colour */
+  background: var(--bg);
+  position: relative;
+  padding: 20px;
+}
+
+.fitBg
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.explore
+{
+  position: relative;
+  top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.explore .contentBx
+{
+  min-width: 50%;
+  width: 50%;
+  text-align: end;
+  padding-right: 40px;
+}
+
+.titleText
+{
+  font-weight: 600;
+  color: #fff;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.text
+{
+  color: #fff;
+  font-size: 1em;
+}
+
+.explore .imgBx
+{
+  position: relative;
+  min-width: 25%;
+  width: 35%;
+  min-height: 600px;
+}
+
+/* Buttons */
+
+.btn
+{
+    padding-top: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.btn li
+{
+    position: relative;
+    list-style: none;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn li:hover
+{
+    z-index: 10000;
+    transform: scale(0.75);
+}
+
+.btn li::before
+{
+    content: '';
+    position: absolute;
+    inset: 30px;
+    box-shadow: 0 0 0 10px var(--clr), 0 0 0 20px var(--bg), 0 0 0 22px var(--clr);
+    transition: 0.5s;
+}
+
+.btn li:hover::before
+{
+    inset: 0;
+}
+
+.btn li::after
+{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--bg);
+    transform: rotate(45deg);
+}
+.btn li a
+{
+    position: relative;
+    text-decoration: none;
+    color: var(--clr);
+    z-index: 10;
+    font-size: 2em;
+    transition: 0.5s;
+    background: transparent;
+}
+
+.btn li:hover a
+{
+    font-size: 3em;
+    filter: drop-shadow(0 0 20px var(--clr)) drop-shadow(0 0 40px var(--clr)) drop-shadow(0 0 60px var(--clr));
+}
