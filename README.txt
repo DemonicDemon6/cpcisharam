@@ -1,6 +1,8 @@
-wth are you doing in the coding
-this is literally a meme thing
-you might aswell leave
-stop snooping around
+Website created by DemonicDemon6
+Copyright (c) protected
+  
+Music copyright (c) CPC Gowda
+Distributed by Distrokid
 
-Music (c) CPC Gowda
+
+######Spatula is the best beat CPC made :)
