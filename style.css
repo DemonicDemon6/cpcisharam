@@ -223,6 +223,7 @@
     text-shadow: 0 0 20px #821CE1; /* #ff005b */
     background: transparent;
     filter: saturate(110%);
+    text-align: center;
 }
 
 .neon::after
